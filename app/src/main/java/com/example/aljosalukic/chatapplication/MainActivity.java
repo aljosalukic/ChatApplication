@@ -1,9 +1,17 @@
 package com.example.aljosalukic.chatapplication;
 
+        import android.app.Notification;
+        import android.app.NotificationChannel;
+        import android.app.NotificationManager;
+        import android.app.PendingIntent;
+        import android.content.Context;
         import android.content.Intent;
+        import android.graphics.Color;
+        import android.os.Build;
         import android.support.annotation.NonNull;
         import android.support.design.widget.FloatingActionButton;
         import android.support.design.widget.Snackbar;
+        import android.support.v4.app.NotificationCompat;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.Menu;
@@ -38,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     EmojiconEditText emojiconEditText;
     ImageView emojiButton,submitButton;
     EmojIconActions emojIconActions;
+    Context context;
 
 
     @Override
@@ -138,8 +147,10 @@ public class MainActivity extends AppCompatActivity {
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
 
+
             }
         };
         listOfMessage.setAdapter(adapter);
     }
+
 }
